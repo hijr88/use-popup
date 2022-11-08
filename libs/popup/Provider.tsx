@@ -63,6 +63,7 @@ function Provider({ children, type = "INFO", isDarkOverlay = true, enableOverlay
     (message: string, option: Option = {}) => {
       function alertClose() {
         setPopup(null);
+        if (option.onClose) option.onClose();
       }
 
       const alert: IAlert = {
@@ -89,6 +90,7 @@ function Provider({ children, type = "INFO", isDarkOverlay = true, enableOverlay
         function confirmClose(resolveValue: boolean) {
           setPopup(null);
           resolve(resolveValue);
+          if (option.onClose) option.onClose();
         }
 
         const confirm: IConfirm = {
