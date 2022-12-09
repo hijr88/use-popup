@@ -67,7 +67,7 @@ function Provider({ children, type = "INFO", isDarkOverlay = true, enableOverlay
       }
 
       const alert: IAlert = {
-        message,
+        message: String(message),
         option: finalOption(option),
         close: alertClose,
       };
@@ -94,7 +94,7 @@ function Provider({ children, type = "INFO", isDarkOverlay = true, enableOverlay
         }
 
         const confirm: IConfirm = {
-          message,
+          message: String(message),
           option: finalOption(option),
           close: confirmClose,
         };
