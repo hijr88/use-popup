@@ -12,6 +12,7 @@ const Overlay = ({ children, isDark, close }: Props) => {
     <div
       className={cls("fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center", { "bg-gray-600 bg-opacity-20": isDark })}
       onClick={() => close()}
+      onMouseDown={(e) => e.stopPropagation()}
     >
       {children}
     </div>
